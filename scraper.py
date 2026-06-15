@@ -1,4 +1,4 @@
-import requests, time
+import requests, time, json
 from bs4 import BeautifulSoup
 
 def scrape_all_quotes():
@@ -6,7 +6,7 @@ def scrape_all_quotes():
     page = 1
 
     while True:
-        url = f"http://quotes.toscrape.com/page/{page}/"
+        url = f"http://quotes.toscrape.com/page/{page}/"    
         response = requests.get(url)
         soup = BeautifulSoup(response.text, "html.parser")
 
@@ -25,14 +25,28 @@ def scrape_all_quotes():
     
     return all_quotes
 
-data = scrape_all_quotes()
-print(f"Done! Total quotes: {len(data)}")
+# data = scrape_all_quotes()
+# print(f"Done! Total quotes: {len(data)}")
 
-count = 1
-for quote in data:
-    print(f"Quote #{count}: {quote.get('quote')} - {quote.get('author')}")
-    count += 1
+# count = 1
+# for quote in data:
+#     print(f"Quote #{count}: {quote.get('quote')} - {quote.get('author')}")
+#     count += 1
 
+url = "https://sdp-prem-prod.premier-league-prod.pulselive.com/api/v3/competitions/8/seasons/2025/players/stats/leaderboard?_sort=goals%3Adesc&country=&_limit=10"
+headers = {
+    "Origin": "https://www.premierleague.com",
+    "Referer": "https://www.premierleague.com/"
+}
+
+response = requests.get(url, headers = headers)
+data = response.json()
+
+for players in data["data"]:
+    name = players["playerMetadata"]["name"]
+    team = players["playerMetadata"]["currentTeam"]["name"]
+    goals = players["stats"]["goals"]
+    print(f"{name} ({team}) - {goals} goals")
 
 # response = requests.get("http://quotes.toscrape.com")
 # print(response.status_code)
