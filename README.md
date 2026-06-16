@@ -1,5 +1,4 @@
 # Weather CLI App
-
 A command line app that give you real time weather data for any city using the OpenWeatherMap API.
 
 ## What it does
@@ -37,7 +36,7 @@ OPENWEATHER_API_KEY=your_key_here
 
 ## How to run it
 ```bash
-python3 scraper.py
+python3 weather.py
 ```
 
 ## Example output
@@ -51,3 +50,6 @@ Humidity: 45%
 Wind: 5.2 mph
 Clear sky
 ```
+
+### Note
+`test-scraper.py` is unrelated to `weather.py` and was used to learn about scraping and APIs. The code for the app is in `weather.py`.
