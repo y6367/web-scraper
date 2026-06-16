@@ -51,5 +51,4 @@ Wind: 5.2 mph
 Clear sky
 ```
 
-### Note
-`test-scraper.py` is unrelated to `weather.py` and was used to learn about scraping and APIs. The code for the app is in `weather.py`.
+> **Note:** `test-scraper.py` was used strictly for learning and experimenting during development. It is unrelated to the weather app. The main application is in `weather.py`.
