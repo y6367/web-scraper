@@ -12,6 +12,10 @@ def insert_weather(date, name, temp, feels_like, humidity, wind, description):
     )
     connection.commit()
 
+def get_rows():
+    cursor.execute('SELECT * FROM weather')
+    return cursor.fetchall()
+
 # cursor.execute("INSERT INTO weather VALUES ('June 17 2026', 'London', 62.74, 62.67, 84, 7, 'Overcast clouds')")
 # cursor.execute('SELECT * FROM weather')
 
