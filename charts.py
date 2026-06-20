@@ -11,4 +11,7 @@ def show_charts():
         temps.append(row[2])
 
     plt.plot(dates,temps)
+    plt.title("Daily Temperature")
+    plt.xlabel("Dates")
+    plt.ylabel("Temperature")
     plt.show()
