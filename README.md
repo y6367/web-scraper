@@ -27,7 +27,7 @@ Type in any city name and get back the current temperature, feels like temperatu
 
 Clone the repo:
 ```bash
-git clone https://github.com/y6367/weather-cli.git
+git clone https://github.com/joew63/weather-cli.git
 cd weather-cli
 ```
 
